@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "03147663-e59f-40d2-82d6-aeda9d7f20e0",
+		"name": "somaia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21831899"
+	},
+	"item": [
+		{
+			"name": "create Space",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"stc-assessment\",\r\n    \"type\": \"SPACE\",\r\n    \"permissionGroup\": {\r\n        \"id\": 1,\r\n        \"permissions\": [\r\n            {\r\n                \"id\": 1,\r\n                \"permissionLevel\": \"VIEW\"\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"permissionLevel\": \"EDIT\"\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/item/SPACE",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						"SPACE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"backend\",\r\n    \"type\": \"FOLDER\",\r\n    \"parentItem\": {\r\n        \"id\": 1,\r\n        \"type\": \"SPACE\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/item/FOLDER",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						"FOLDER"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"assessment.pdf\",\r\n    \"type\": \"FILE\",\r\n    \"parentItem\": {\r\n        \"id\": 2,\r\n        \"type\": \"FOLDER\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/item/FILE",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						"FILE"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
